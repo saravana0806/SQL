@@ -1,3 +1,6 @@
+
+
+
 SELECT COUNT(*) AS total_records FROM your_table;
 
 SELECT SUM(sales_amount) AS total_sales FROM sales;
@@ -19,4 +22,101 @@ CREATE TABLE orders (
     customer_id INT,
     order_date DATE,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+
 );
+
+Case statement
+
+select SOL_DESC, SOL_ID, CASE when SOL_ID>16000 then 'A' ELSE 'B' END AS GRADE_CATegory from BSBDS002
+
+With Statment
+
+WITH SOL_TOTAL AS (SELECT SUM(SOL_ID) STD from BSBDS002), SOLD as ( select SUM(SOL_ID) SMD from BSBDS002) select STD,SMD from BSBDS002,SOL_TOTAL, SOLD;
+
+
+PRIMARY KEY Constraint: This constraint uniquely identifies each record in a table. It must contain unique values and cannot contain NULL values.
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+UNIQUE Constraint: This constraint ensures that all values in a column are different. It allows for NULL values, but if a column is unique and contains a NULL value, it can only have one NULL value.
+
+CREATE TABLE employees (
+    employee_id INT UNIQUE,
+    employee_name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+
+FOREIGN KEY Constraint: This constraint establishes a relationship between two tables. It ensures referential integrity by enforcing a link between the data in two tables.
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+
+NOT NULL Constraint: This constraint ensures that a column cannot contain NULL values.
+
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+Auto Increment
+
+CREATE TABLE your_table (
+    id_column INT AUTO_INCREMENT PRIMARY KEY,
+    other_column VARCHAR(100)
+);
+INSERT INTO your_table (other_column) VALUES ('value');
+
+
+START TRANSACTION;
+
+-- Update quantity in order_details
+UPDATE order_details
+SET quantity = 10
+WHERE order_id = 123
+  AND product_id = 456;
+
+-- Recalculate total amount in orders table
+UPDATE orders o
+SET total_amount = (
+    SELECT SUM(quantity * unit_price)
+    FROM order_details od
+    WHERE od.order_id = o.order_id
+)
+WHERE order_id = 123;
+
+COMMIT;
+
+
+TRUNCATE TABLE your_table;
+
+DROP TABLE your_table;
+
+Index and views
+CREATE TABLE employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+ALTER TABLE employees
+ADD COLUMN department VARCHAR(50);
+
+CREATE INDEX idx_last_name ON employees(last_name);
+
+CREATE VIEW employee_view AS
+SELECT employee_id, first_name, last_name, salary
+FROM employees;
+
+DROP INDEX idx_last_name ON employees;   #indexes improve query performance, they can also slow down data modification operations (such as inserts, updates, and deletes) because the database must maintain the index structure
+
+DROP VIEW employee_view;  #represent a subset of the data stored in the underlying tables and are stored as precompiled SQL queries in the database

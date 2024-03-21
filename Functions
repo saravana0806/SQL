@@ -1,0 +1,49 @@
+String Functions
+
+SELECT CONCAT('Hello', ' ', 'World') AS concatenated_string;
+
+SELECT SUBSTRING('Hello World', 7) AS substring_result;
+
+SELECT UPPER('hello') AS upper_case_string;
+
+SELECT LOWER('HELLO') AS lower_case_string;
+
+SELECT LENGTH('Hello World') AS string_length;
+
+Numeric Functions
+
+SELECT ABS(-10) AS absolute_value;
+
+SELECT ROUND(3.14159, 2) AS rounded_number;
+
+SELECT FLOOR(9.99) AS floored_number;
+
+SELECT CEIL(4.5) AS ceiling_value;
+
+Date and Time Functions
+
+SELECT NOW() AS current_datetime;
+
+SELECT DATE_FORMAT(NOW(), '%Y-%m-%d') AS formatted_date;
+
+SELECT DATEDIFF('2022-03-21', '2022-01-01') AS days_difference;
+
+Aggregate Functions
+
+SELECT customer_id, SUM(order_total) AS total_orders
+FROM orders
+GROUP BY customer_id;
+
+SELECT customer_id, SUM(order_total) AS total_orders
+FROM orders
+GROUP BY customer_id
+HAVING total_orders > 1000;
+
+SQL Functions
+
+SELECT customer_id, MIN(birthdate) AS oldest_customer
+FROM customers;
+
+SELECT SUM(amount) AS total_sales
+FROM sales;
+

@@ -1,0 +1,22 @@
+SELECT COUNT(*) AS total_records FROM your_table;
+
+SELECT SUM(sales_amount) AS total_sales FROM sales;
+
+
+SELECT AVG(age) AS average_age FROM people;
+
+select SOL_ID from BSBDS001 union all select SOL_ID from BSBDS002
+
+
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);

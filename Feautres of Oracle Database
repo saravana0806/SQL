@@ -1,0 +1,19 @@
+Multitenant Architecture: One of the key features introduced in Oracle Database 12c is the multitenant architecture, which allows multiple pluggable databases (PDBs) to be managed as a single container database (CDB). This architecture provides efficient resource utilization, simplified management, and improved database consolidation.
+
+In-Memory Database Option: Oracle Database 12c introduced the In-Memory Database option, which allows users to store data in both traditional disk-based and in-memory formats simultaneously. This feature significantly improves query performance for analytics and reporting by storing frequently accessed data in memory.
+
+JSON Support: Oracle Database 12c includes native support for JSON (JavaScript Object Notation) data, allowing users to store, index, and query JSON documents directly within the database. This feature simplifies application development for web and mobile applications that use JSON as their data format.
+
+Automatic Data Optimization (ADO): ADO is a feature in Oracle Database 12c that automates the management of data storage and compression tiers based on usage patterns and predefined policies. It allows organizations to optimize storage costs by automatically moving data between different storage tiers (e.g., flash, disk, or tape) and applying compression based on access patterns.
+
+Application Continuity: Oracle Database 12c introduced Application Continuity, which provides uninterrupted access to applications in the event of planned or unplanned outages. It ensures that in-flight transactions are automatically replayed in the event of a failure, minimizing downtime and ensuring data integrity.
+
+Redaction Policies: Oracle Database 12c introduced Redaction policies, which allow sensitive data to be automatically masked or redacted based on predefined rules. This feature helps organizations comply with privacy regulations and protect sensitive information from unauthorized access.
+
+Partitioning Enhancements: Oracle Database 12c includes enhancements to partitioning, such as interval partitioning, reference partitioning, and cascading truncates. These enhancements provide greater flexibility and efficiency in managing large datasets by automatically creating and managing partitions based on defined criteria.
+
+Real-Time SQL Monitoring: Oracle Database 12c introduced Real-Time SQL Monitoring, which allows users to monitor the performance of SQL statements in real-time, including execution plans, resource consumption, and wait events. This feature helps identify and troubleshoot performance bottlenecks quickly.
+
+Unified Auditing: Oracle Database 12c introduced Unified Auditing, which consolidates all audit trail records into a single audit trail. This simplifies auditing and compliance management by providing a unified view of all audit data and enabling easier analysis and reporting.
+
+Enhanced Security Features: Oracle Database 12c includes several enhanced security features, such as Privilege Analysis, Data Redaction, and Transparent Data Encryption (TDE). These features help organizations strengthen data protection and comply with regulatory requirements.

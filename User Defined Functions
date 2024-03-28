@@ -1,0 +1,32 @@
+ORACLE DB
+
+CREATE OR REPLACE FUNCTION calculate_bonus (salary NUMBER)
+RETURN NUMBER
+IS
+    bonus NUMBER;
+BEGIN
+    IF salary > 50000 THEN
+        bonus := salary * 0.1; -- 10% bonus
+    ELSE
+        bonus := salary * 0.05; -- 5% bonus
+    END IF;
+    RETURN bonus;
+END;
+
+SELECT calculate_bonus(60000) AS bonus_amount FROM dual;
+
+
+In MYSQL
+CREATE FUNCTION calculate_bonus (salary DECIMAL(10, 2))
+RETURNS DECIMAL(10, 2)
+BEGIN
+    DECLARE bonus DECIMAL(10, 2);
+    
+    IF salary > 50000 THEN
+        SET bonus = salary * 0.1; -- 10% bonus
+    ELSE
+        SET bonus = salary * 0.05; -- 5% bonus
+    END IF;
+    
+    RETURN bonus;
+END;

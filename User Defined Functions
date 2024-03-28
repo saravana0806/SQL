@@ -15,8 +15,8 @@ END;
 
 SELECT calculate_bonus(60000) AS bonus_amount FROM dual;
 
+MYSQL DB
 
-In MYSQL
 CREATE FUNCTION calculate_bonus (salary DECIMAL(10, 2))
 RETURNS DECIMAL(10, 2)
 BEGIN

@@ -1,0 +1,57 @@
+CREATE VIEW simple_view AS
+SELECT employee_id, first_name, department_id
+FROM employees;
+
+
+CREATE VIEW complex_view AS
+SELECT e.employee_id,
+       e.first_name || ' ' || e.last_name AS full_name,
+       d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id;
+
+SELECT * FROM your_view_name;
+
+-- To see all views in the entire database (requires appropriate privileges):
+SELECT view_name
+FROM all_views;
+
+
+CREATE SEQUENCE OF NUMBERS
+
+CREATE SEQUENCE your_sequence_name
+    START WITH 1
+    INCREMENT BY 1
+    MAXVALUE 1000
+    NOCACHE;
+
+-- Inserting data into a table with a sequence-generated primary key
+INSERT INTO your_table (id, name, ...) VALUES (your_sequence_name.NEXTVAL, 'John', ...);
+
+
+Index 
+CREATE INDEX idx_customer_name ON customers (last_name, first_name);
+
+CREATE INDEX index_name ON table_name (column1, column2);
+
+
+Sub Queries
+Filtering Data
+SELECT name
+FROM employees
+WHERE department_id = (SELECT department_id FROM departments WHERE location = 'New York');
+
+Calculating Aggregates
+SELECT department_id, (SELECT COUNT(*) FROM employees WHERE department_id = d.department_id) AS num_employees
+FROM departments d;
+
+Using IN Operator
+SELECT product_name
+FROM products
+WHERE category_id IN (SELECT category_id FROM categories WHERE category_name = 'Electronics');
+
+Using EXISTS Operator
+SELECT product_name
+FROM products p
+WHERE EXISTS (SELECT * FROM orders o WHERE o.product_id = p.product_id);
+

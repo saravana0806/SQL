@@ -83,3 +83,18 @@ SELECT NULLIF(salary, 0) AS salary_without_zero FROM employees;
 COALESCE: This function returns the first non-null expression from a list of expressions.
 
 SELECT COALESCE(salary, 0) AS salary_with_default FROM employees;
+
+NVL:
+Syntax: NVL(expr1, expr2)
+Functionality: Returns expr2 if expr1 is null; otherwise, returns expr1.
+Use Case: Typically used to replace null values with a default value.
+
+NULLIF:
+Syntax: NULLIF(expr1, expr2)
+Functionality: Returns null if expr1 equals expr2; otherwise, returns expr1.
+Use Case: Useful for setting a column to null if it has a specific value.
+
+COALESCE:
+Syntax: COALESCE(expr1, expr2, ...)
+Functionality: Returns the first non-null expression from the list of expressions.
+Use Case: Useful for selecting the first non-null value from a list of columns or expressions.

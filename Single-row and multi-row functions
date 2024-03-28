@@ -1,0 +1,23 @@
+Single-Row Functions:
+
+Input: Single-row functions operate on individual rows of data and return a single result per row.
+Processing: They process one row at a time and perform operations on each row independently.
+Output: Each row of input data produces a corresponding row of output data.
+Examples: Functions like UPPER, LOWER, TRIM, LENGTH, TO_DATE, TO_CHAR, etc., are examples of single-row functions.
+
+
+-- Query to select employee names after removing leading and trailing spaces
+SELECT TRIM(employee_name) AS trimmed_name FROM employee;
+
+
+Multi-Row Functions:
+
+Input: Multi-row functions operate on multiple rows of data and return a single result for the entire set of rows.
+Processing: They consider multiple rows as a set and perform aggregate or analytical operations on the entire set of rows.
+Output: Instead of producing one result per row, they produce a single result for the entire set of rows.
+Examples: Functions like SUM, AVG, COUNT, MAX, MIN, LISTAGG, ROW_NUMBER, RANK, etc., are examples of multi-row functions.
+
+SELECT product_id, SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY product_id;
+

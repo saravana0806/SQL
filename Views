@@ -1,0 +1,17 @@
+CREATE VIEW simple_view AS
+SELECT employee_id, first_name, department_id
+FROM employees;
+
+
+CREATE VIEW complex_view AS
+SELECT e.employee_id,
+       e.first_name || ' ' || e.last_name AS full_name,
+       d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id;
+
+SELECT * FROM your_view_name;
+
+-- To see all views in the entire database (requires appropriate privileges):
+SELECT view_name
+FROM all_views;

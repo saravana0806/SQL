@@ -98,3 +98,28 @@ COALESCE:
 Syntax: COALESCE(expr1, expr2, ...)
 Functionality: Returns the first non-null expression from the list of expressions.
 Use Case: Useful for selecting the first non-null value from a list of columns or expressions.
+
+
+IF ELSE STATEMENT:
+SELECT 
+    employee_id,
+    salary,
+    CASE 
+        WHEN salary > 50000 THEN 'High Salary'
+        WHEN salary > 30000 THEN 'Moderate Salary'
+        ELSE 'Low Salary'
+    END AS salary_category
+FROM 
+    employees;
+
+SELECT 
+    DECODE(salary, 50000, 'High Salary', 30000, 'Moderate Salary', 'Low Salary') AS salary_category
+FROM 
+    employees;
+
+NEST MULTIPLE FUNCTIONS
+SELECT 
+    UPPER(SUBSTR(REVERSE(column_name), 1, 3)) AS modified_column
+FROM 
+    your_table;
+

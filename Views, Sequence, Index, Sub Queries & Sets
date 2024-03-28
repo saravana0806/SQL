@@ -55,3 +55,20 @@ SELECT product_name
 FROM products p
 WHERE EXISTS (SELECT * FROM orders o WHERE o.product_id = p.product_id);
 
+SET :Set operators in SQL allow you to combine the results of two or more SELECT statements into a single result set
+UNION
+SELECT column1, column2 FROM table1
+UNION
+SELECT column1, column2 FROM table2;
+
+
+INTERSECT
+SELECT column1, column2 FROM table1
+INTERSECT
+SELECT column1, column2 FROM table2;
+
+
+EXCEPT
+SELECT column1, column2 FROM table1
+EXCEPT
+SELECT column1, column2 FROM table2;

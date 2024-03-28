@@ -58,3 +58,15 @@ SELECT AVG(SOL_ID) OVER (PARTITION BY REGION_NAME) AS avg_sOL,SOL_DESC
 FROM BSBDS002;
 
 
+TO_CHAR: Converts a value of DATE, TIMESTAMP, or NUMBER datatype to a string.
+
+SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYY HH:MI:SS') AS current_date_time FROM dual;
+
+
+TO_NUMBER: Converts a string into a number.
+
+SELECT TO_NUMBER('123.45') AS number_value FROM dual;
+
+TO_DATE: Converts a string to a DATE value.
+
+SELECT TO_DATE('2024-03-12', 'YYYY-MM-DD') AS date_value FROM dual;  

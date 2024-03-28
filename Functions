@@ -70,3 +70,16 @@ SELECT TO_NUMBER('123.45') AS number_value FROM dual;
 TO_DATE: Converts a string to a DATE value.
 
 SELECT TO_DATE('2024-03-12', 'YYYY-MM-DD') AS date_value FROM dual;  
+
+
+NVL: This function replaces a null value with a specified value.
+
+SELECT NVL(salary, 0) AS salary_with_default FROM employees;
+
+NULLIF: This function returns null if two expressions are equal; otherwise, it returns the first expression.
+
+SELECT NULLIF(salary, 0) AS salary_without_zero FROM employees;
+
+COALESCE: This function returns the first non-null expression from a list of expressions.
+
+SELECT COALESCE(salary, 0) AS salary_with_default FROM employees;
